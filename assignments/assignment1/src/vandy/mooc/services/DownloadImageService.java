@@ -192,15 +192,15 @@ public class DownloadImageService extends IntentService {
         // Put the URL to the image file into the Bundle via the
         // IMAGE_URL key.
         // @@ TODO -- you fill in here.
-        bundle.putParcelable(IMAGE_URL, url);
+        bundle.putString(IMAGE_URL, url.toString());
 
         // Return the result to indicate whether the download
         // succeeded or failed.
         // @@ TODO -- you fill in here.
         if(null==pathToImageFile){
-        	message.arg1 = Activity.RESULT_OK;
-        }else /*if(null!=pathToImageFile)*/{
         	message.arg1 = Activity.RESULT_CANCELED;
+        }else /*if(null!=pathToImageFile)*/{
+        	message.arg1 = Activity.RESULT_OK;
         }
 
         // Put the path to the image file into the Bundle via the
