@@ -81,7 +81,23 @@ public class MainActivity extends LifecycleLoggingActivity
             // that the runtime configuration change has completed.
             mImageOps = 
                 mRetainedFragmentManager.get("IMAGE_OPS_STATE");
-            mImageOps.onConfigurationChange(this);
+
+            // This check shouldn't be necessary under normal
+            // circumtances, but it's better to lose state than to
+            // crash!
+            if (mImageOps == null) {
+                // Create the ImageOps object one time.
+                mImageOps = new ImageOps(this);
+
+                // Store the ImageOps into the
+                // RetainedFragmentManager.
+                mRetainedFragmentManager.put("IMAGE_OPS_STATE",
+                                             mImageOps);
+            }            
+            else 
+                // Inform it that the runtime configuration change has
+                // completed.
+                mImageOps.onConfigurationChange(this);
         }
     }
 
