@@ -52,6 +52,7 @@ public class ImageOpsBoundService extends ImageOpsImpl {
                 // returned IBinder object and store it for later use
                 // in mRequestMessengerRef.
                 // TODO -- you fill in here.
+                mRequestMessengerRef = new Messenger(binder);
             }
 
             /**
@@ -65,6 +66,7 @@ public class ImageOpsBoundService extends ImageOpsImpl {
                 // null, thereby preventing send() calls until it's
                 // reconnected.
                 // TODO -- you fill in here.
+                mRequestMessengerRef = null;
             }
 	};
 

@@ -206,7 +206,9 @@ public class DownloadImageService extends IntentService {
         // Put the path to the image file into the Bundle via the
         // IMAGE_PATHNAME key only if the download succeeded.
         // @@ TODO -- you fill in here.
-        bundle.putParcelable(IMAGE_PATHNAME, pathToImageFile);
+        if(null!=pathToImageFile){
+        	bundle.putString(IMAGE_PATHNAME, pathToImageFile.toString());
+        }
 
         // Set the Bundle to be the data in the message.
         // @@ TODO -- you fill in here.
