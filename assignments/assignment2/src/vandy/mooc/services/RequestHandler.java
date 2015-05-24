@@ -64,7 +64,7 @@ class RequestHandler extends Handler {
         final Messenger replayMessager = requestMessage.getMessenger();
         
 
-        // Get the URL associated with the Intent data.
+        // Get the URL associated with the message data.
         // TODO -- you fill in here.
         final Uri url = requestMessage.getImageURL();
 

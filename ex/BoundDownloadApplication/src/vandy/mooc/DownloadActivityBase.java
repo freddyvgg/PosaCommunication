@@ -28,7 +28,7 @@ import android.widget.ImageView;
  * methods, such as onStart() or onPause(), is also an example of the
  * Template Method pattern.
  */
-public class DownloadBase extends Activity {
+public class DownloadActivityBase extends Activity {
     /**
      * Used for debugging.
      */
